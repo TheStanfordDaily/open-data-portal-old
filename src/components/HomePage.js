@@ -9,7 +9,7 @@ class Home extends React.Component {
         <div>
           Our mission is to make Stanford more transparent and accountable by
           reducing the cost of finding data. Explore at your will and please
-          let us know if you encounter any datasets we have not yet included!
+          let us know if you encounter any datasets we have not yet included.
         </div>
       </div>
     )
