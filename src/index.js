@@ -3,23 +3,20 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import About from './components/About';
-import Home from './components/Home';
-import Topics from './components/Topics';
+import Home from './components/HomePage';
+import DataList from './components/DataList';
+import TopBar from './components/TopBar';
 
 const BasicExample = () => (
   <Router>
     <div>
-      <ul>
-        <li><Link to="/">Home Ware</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/topics">Topics</Link></li>
-      </ul>
+      <TopBar />
 
       <hr />
 
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
-      <Route path="/topics" component={Topics} />
+      <Route path="/data-list" component={DataList} />
     </div>
   </Router>
 );
