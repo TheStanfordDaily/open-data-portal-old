@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 
-const Topic = ({ match }) => (
+const DataSet = ({ match }) => (
   <div>
-    <h3>{match.params.topicId}</h3>
+    <h3>{match.params.dataId}</h3>
   </div>
 );
 
-const Topics = ({ match }) => (
+const DataList = ({ match }) => (
   <div>
-    <h2>Topics</h2>
+    <h2>Datasets</h2>
     <ul>
       <li>
         <Link to={`${match.url}/rendering`}>
@@ -28,13 +28,13 @@ const Topics = ({ match }) => (
       </li>
     </ul>
 
-    <Route path={`${match.url}/:topicId`} component={Topic} />
+    <Route path={`${match.url}/:dataId`} component={DataSet} />
     <Route
       exact
       path={match.url}
-      render={() => <h3>Please select a topic.</h3>}
+      render={() => <h3>Please select a dataset.</h3>}
     />
   </div>
 );
 
-export default Topics;
+export default DataList;
