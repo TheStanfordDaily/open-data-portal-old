@@ -3,7 +3,7 @@ import React from 'react';
 class Home extends React.Component {
   //constructor if necessary here
   render() {
-    const home = () => (
+    return (
       <div>
         <h2>Welcome to the Stanford Open Data Portal!</h2>
         <div>
@@ -12,9 +12,6 @@ class Home extends React.Component {
           let us know if you encounter any datasets we have not yet included!
         </div>
       </div>
-    );
-    return (
-      {home}
     )
 
   }
