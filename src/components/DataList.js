@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-
-const DataSet = ({ match }) => (
-  <div>
-    <h3>{match.params.dataId}</h3>
-  </div>
-);
+import SideBar from './SideBar';
+import DataSet from './DataSet';
 
 const DataList = ({ match }) => (
   <div>
+  <SideBar />
     <h2>Datasets</h2>
     <ul>
       <li>
