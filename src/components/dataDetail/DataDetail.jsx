@@ -5,8 +5,9 @@ class DataDetail extends React.Component {
 
 	render() {
 		return(
-			<div className="all">
-				<div>Name</div>
+			<div className="left">
+				<div>Dataset: </div>
+				<div className
 			</div>
 		)
 	}
