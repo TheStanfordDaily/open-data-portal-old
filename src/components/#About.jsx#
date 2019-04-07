@@ -1,0 +1,256 @@
+Last login: Sun Apr  7 14:30:20 on ttys000
+DN0a225240:~ ewen$ cd Desktop
+DN0a225240:Desktop ewen$ git clone https://github.com/TheStanfordDaily/open-data-portal.git
+Cloning into 'open-data-portal'...
+remote: Enumerating objects: 100, done.
+remote: Counting objects: 100% (100/100), done.
+remote: Compressing objects: 100% (66/66), done.
+remote: Total 100 (delta 36), reused 78 (delta 24), pack-reused 0
+Receiving objects: 100% (100/100), 192.95 KiB | 4.82 MiB/s, done.
+Resolving deltas: 100% (36/36), done.
+DN0a225240:Desktop ewen$ cd open-data-portal
+DN0a225240:open-data-portal ewen$ ls
+README.md		    	  package.json		src
+package-lock.json		  public
+DN0a225240:open-data-portal ewen$ git branch
+* master
+DN0a225240:open-data-portal ewen$ git checkout -b homePage
+Switched to a new branch 'homePage'
+DN0a225240:open-data-portal ewen$ cd src
+DN0a225240:src ewen$ cd components
+DN0a225240:components ewen$ ls
+about		      	    dataList	sideBar
+dataDetail		    homePage	topBar
+DN0a225240:components ewen$ cd homePage
+DN0a225240:homePage ewen$ ls
+HomePage.jsx
+DN0a225240:homePage ewen$ emacs HomePage.jsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DN0a225240:homePage ewen$ ls
+HomePage.jsx	    HomePage.jsx~
+DN0a225240:homePage ewen$ git init
+Initialized empty Git repository in /Users/ewen/Desktop/open-data-portal/src/components/homePage/.git/
+DN0a225240:homePage ewen$ git add .
+DN0a225240:homePage ewen$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+  new file:   HomePage.jsx
+  new file:   HomePage.jsx~
+
+DN0a225240:homePage ewen$ git commit -a "Added HomePage text"
+fatal: Paths with -a does not make sense.
+DN0a225240:homePage ewen$ git commit "Added HomePage text"
+error: pathspec 'Added HomePage text' did not match any file(s) known to git
+DN0a225240:homePage ewen$ git commit -m "Added HomePage text"
+[master (root-commit) 0bf22a2] Added HomePage text
+ 2 files changed, 40 insertions(+)
+ create mode 100755 HomePage.jsx
+ create mode 100755 HomePage.jsx~
+DN0a225240:homePage ewen$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+DN0a225240:homePage ewen$ cd ..
+DN0a225240:components ewen$ cd ..
+DN0a225240:src ewen$ cd ..
+DN0a225240:open-data-portal ewen$ git add .
+DN0a225240:open-data-portal ewen$ git status
+On branch homePage
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+  modified:   src/components/homePage/HomePage.jsx
+  new file:   src/components/homePage/HomePage.jsx~
+
+DN0a225240:open-data-portal ewen$ git psuh
+git: 'psuh' is not a git command. See 'git --help'.
+
+The most similar command is
+    push
+DN0a225240:open-data-portal ewen$ git push
+fatal: The current branch homePage has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin homePage
+
+DN0a225240:open-data-portal ewen$ git push -u origin HomePage
+Username for 'https://github.com': ewen7
+Password for 'https://ewen7@github.com': 
+fatal: HomePage cannot be resolved to branch.
+DN0a225240:open-data-portal ewen$ git branch
+* homePage
+  master
+DN0a225240:open-data-portal ewen$ git push -u origin homePage
+Total 0 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'homePage' on GitHub by visiting:
+remote:      https://github.com/TheStanfordDaily/open-data-portal/pull/new/homePage
+remote: 
+To https://github.com/TheStanfordDaily/open-data-portal.git
+ * [new branch]      homePage -> homePage
+Branch 'homePage' set up to track remote branch 'homePage' from 'origin'.
+DN0a225240:open-data-portal ewen$ git status
+On branch homePage
+Your branch is up to date with 'origin/homePage'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+  modified:   src/components/homePage/HomePage.jsx
+  new file:   src/components/homePage/HomePage.jsx~
+
+DN0a225240:open-data-portal ewen$ git commit -m "add homepage text"
+[homePage 64819ae] add homepage text
+ 2 files changed, 22 insertions(+), 2 deletions(-)
+ create mode 100755 src/components/homePage/HomePage.jsx~
+DN0a225240:open-data-portal ewen$ git push
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 608 bytes | 608.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/TheStanfordDaily/open-data-portal.git
+   9dddf57..64819ae  homePage -> homePage
+DN0a225240:open-data-portal ewen$ git branch
+* homePage
+  master
+DN0a225240:open-data-portal ewen$ git pull
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 3), reused 6 (delta 3), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From https://github.com/TheStanfordDaily/open-data-portal
+ * [new branch]      about_us   -> origin/about_us
+Already up to date.
+DN0a225240:open-data-portal ewen$ git brnach
+git: 'brnach' is not a git command. See 'git --help'.
+
+The most similar command is
+    branch
+DN0a225240:open-data-portal ewen$ git branch
+* homePage
+  master
+DN0a225240:open-data-portal ewen$ git checkout about_us
+Branch 'about_us' set up to track remote branch 'about_us' from 'origin'.
+Switched to a new branch 'about_us'
+DN0a225240:open-data-portal ewen$ ls
+README.md		    	  package.json		src
+package-lock.json		  public
+DN0a225240:open-data-portal ewen$ emacs src
+DN0a225240:open-data-portal ewen$ cd src
+DN0a225240:src ewen$ ls
+components     index.js	style.css
+DN0a225240:src ewen$ cd components
+DN0a225240:components ewen$ ls
+About.jsx	      DataList.js	SideBar.js	homePage
+DataDetail.js	      HomePage.js	TopBar.js
+DN0a225240:components ewen$ emacs About.jsx
+DN0a225240:components ewen$ emacs About.jsx
+
+import React from 'react';
+
+const About = () => (
+  <div>
+    <h2>About Us</h2>
+    <p>The Stanford Open Data Project (SODP) is making data about Stanford University more accessible\
+ and transparent. Our Open Data Portal allows anyone to find and analyze Stanford-related data, such \
+as university finances, student life, and academics.</p>
+
+    <p>SODP works in collaboration with <a href="http://www.stanforddaily.com">The Stanford Daily</a>\
+, Stanford's premier publication. Student journalists are constantly trying to write impactful storie\
+s about the university, but they often struggle to find relevant data that would strengthen their nar\
+ratives. Even if this data can be located, often it is unprocessed and difficult to use. Additionally\
+, there are many stories that wouldn't be discovered without seeing the data first. As a result, SODP\
+'s convenient access to Stanford data is immensely valuable for The Stanford Daily. </p>
+
+    <p>SODP is also the recipient of <a href="https://www.codingitforward.com/build">Coding It Forwar\
+d's Build Program Fellowship</a>, a semester-long civic tech incubator.</p>
+  </div>
+);
+
+export default About;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-uu-:---F1  About.jsx      All L1     (Fundamental)---------------------------------------------------
+Loading image...doneimport React from 'react';
+
+const About = () => (
+  <div>
+    <h2>About Us</h2>
+    <p>The Stanford Open Data Project (SODP) is making data about Stanford University more accessible and transparent. Our Open Data Portal allows anyone to find and analyze Stanford-related data, such as university finances, student life, and academics.</p>
+
+    <p>SODP works in collaboration with <a href="http://www.stanforddaily.com">The Stanford Daily</a>, Stanford's premier publication. Student journalists are constantly trying to write impactful stories about the university, but they often struggle to find relevant data that would strengthen their narratives. Even if this data can be located, often it is unprocessed and difficult to use. Additionally, there are many stories that wouldn't be discovered without seeing the data first. As a result, SODP's convenient access to Stanford data is immensely valuable for The Stanford Daily. </p>
+
+    <p>SODP is also the recipient of <a href="https://www.codingitforward.com/build">Coding It Forward's Build Program Fellowship</a>, a semester-long civic tech incubator.</p>
+  </div>
+);
+
+export default About; 
