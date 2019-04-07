@@ -6,9 +6,11 @@ class TopBar extends React.Component {
 	render() {
 		return(
 			<div className="all">
-				<Link to="/">Home Page</Link>
-				<Link to="/about">About Us</Link>
-				<Link to="/data-list">Datasets</Link>
+				<Link to="/">Home</Link>
+				<Link to="/data-list">Data Catalog</Link>
+				<Link to="/">Blog</Link>
+				<Link to="/">Submit</Link>
+				<Link to="/about">About</Link>
 			</div>
 		)
 	}
