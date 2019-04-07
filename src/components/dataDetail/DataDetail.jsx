@@ -7,7 +7,9 @@ class DataDetail extends React.Component {
 		return(
 			<div className="left">
 				<div>Dataset: </div>
-				<div className
+				<div className="small">
+					Yoba
+				</div>
 			</div>
 		)
 	}
