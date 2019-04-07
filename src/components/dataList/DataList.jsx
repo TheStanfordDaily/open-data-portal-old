@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-import SideBar from './SideBar';
-import DataDetail from './DataDetail';
+import DataDetail from '../dataDetail/DataDetail.jsx';
+import SideBar from '../sideBar/SideBar.jsx';
 
 const DataList = ({ match }) => (
   <div>

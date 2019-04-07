@@ -3,10 +3,10 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import About from './components/About';
-import Home from './components/HomePage';
-import DataList from './components/DataList';
-import TopBar from './components/TopBar';
+import About from './components/about/About.jsx';
+import Home from './components/homePage/HomePage.jsx';
+import DataList from './components/dataList/DataList.jsx';
+import TopBar from './components/topBar/TopBar.jsx';
 
 const BasicExample = () => (
   <Router>
