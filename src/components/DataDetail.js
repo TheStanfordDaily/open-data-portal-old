@@ -1,7 +1,7 @@
 import React from 'react';
 //import { Link } from 'react-router-dom';
 
-class DataSet extends React.Component {
+class DataDetail extends React.Component {
 
 	render() {
 		return(
@@ -12,4 +12,4 @@ class DataSet extends React.Component {
 	}
 }
 
-export default DataSet;
+export default DataDetail;

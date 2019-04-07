@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import SideBar from './SideBar';
-import DataSet from './DataSet';
+import DataDetail from './DataDetail';
 
 const DataList = ({ match }) => (
   <div>
@@ -25,7 +25,7 @@ const DataList = ({ match }) => (
       </li>
     </ul>
 
-    <Route path={`${match.url}/:dataId`} component={DataSet} />
+    <Route path={`${match.url}/:dataId`} component={DataDetail} />
     <Route
       exact
       path={match.url}
