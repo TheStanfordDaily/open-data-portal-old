@@ -8,7 +8,7 @@ import DataItem from '../dataItem/DataItem.jsx';
 class DataList extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       data_list: undefined,
     };
