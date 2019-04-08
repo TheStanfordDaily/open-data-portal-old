@@ -6,25 +6,28 @@
 var express = require('express');
 var app = express();
 var AWS = require('aws-sdk');
+var cors = require('cors');
+var credentials = require('./credentials');
 
 var async = require('async');
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname));
 app.use(bodyParser.json());
+app.use(cors());
 
 
 AWS.config.update({
-	accessKeyId: "",
-	secretAccessKey: "",
+	accessKeyId: credentials.accessKey,
+	secretAccessKey: credentials.accessKeySecret,
 });
 
 var s3 = new AWS.S3();
 
 app.get('/datasets/list', function(request, response) {
 	let params = {
-		Bucket: "",
-		Key: "",
+		Bucket: credentials.bucket,
+		Key: "test.json",
 	};
 
 	s3.getObject(params, function(error, data) {
@@ -41,13 +44,13 @@ app.get('/datasets/list', function(request, response) {
 		}
 
 		// now data is an object that contains the contents in data.Body
-		var array = JSON.parse(data.Body);
+		var array = JSON.parse(new Buffer(data.Body).toString("utf8"));
 		console.log(array);
 		response.end(JSON.stringify(array));
 	});
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(9000, function () {
     var port = server.address().port;
     console.log('Listening at http://localhost:' + port + ' exporting the directory ' + __dirname);
 });
