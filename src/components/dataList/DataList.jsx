@@ -3,26 +3,39 @@ import { Link, Route } from 'react-router-dom';
 import DataDetail from '../dataDetail/DataDetail.jsx';
 import SideBar from '../sideBar/SideBar.jsx';
 
+let array = [
+  {
+    name: "Rendering with React",
+    source: "-source-",
+    description: "-description-"
+  },
+  {
+    name: "Components",
+    source: "-source-",
+    description: "-description-"
+  },
+  {
+    name: "Props v. State",
+    source: "-source-",
+    description: "-description-"
+  }
+];
+
 const DataList = ({ match }) => (
   <div>
   <SideBar />
     <h2>Datasets</h2>
+
     <ul>
-      <li>
-        <Link to={`${match.url}/rendering`}>
-          Rendering with React
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/components`}>
-          Components
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/props-v-state`}>
-          Props v. State
-        </Link>
-      </li>
+      {array.map((element) =>
+            <li key={element.name}> 
+              <Link to={`${match.url}/{element.name}`}>
+                {element.name}
+              </Link><br></br>
+              <label>Source: {element.source}</label><br></br>
+              <label>Description: {element.description}</label>
+            </li>
+      )}
     </ul>
 
     <Route path={`${match.url}/:dataId`} component={DataDetail} />
