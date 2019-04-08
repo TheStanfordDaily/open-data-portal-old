@@ -9,7 +9,6 @@ var AWS = require('aws-sdk');
 var cors = require('cors');
 var credentials = require('./credentials');
 
-var async = require('async');
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname));
@@ -27,7 +26,7 @@ var s3 = new AWS.S3();
 app.get('/datasets/list', function(request, response) {
 	let params = {
 		Bucket: credentials.bucket,
-		Key: "test.json",
+		Key: "metadata.json",
 	};
 
 	s3.getObject(params, function(error, data) {
@@ -45,7 +44,6 @@ app.get('/datasets/list', function(request, response) {
 
 		// now data is an object that contains the contents in data.Body
 		var array = JSON.parse(new Buffer(data.Body).toString("utf8"));
-		console.log(array);
 		response.end(JSON.stringify(array));
 	});
 });
