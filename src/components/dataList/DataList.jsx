@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { Link, Route } from 'react-router-dom';
 import DataDetail from '../dataDetail/DataDetail.jsx';
 import SideBar from '../sideBar/SideBar.jsx';
