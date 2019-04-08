@@ -4,7 +4,7 @@ class Home extends React.Component {
   //constructor if necessary here
   render() {
     return (
-      <div>
+      <div className="container">
         <h2 id = "title">Stanford Open Data Portal</h2>
         <div id="intro">
           Our mission is to make Stanford more transparent and accountable by
