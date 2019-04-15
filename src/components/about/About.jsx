@@ -1,4 +1,5 @@
 import React from 'react';
+import photo from './photo.jpg';
 
 const About = () => (
   <div>
@@ -8,6 +9,8 @@ const About = () => (
     <p>SODP works in collaboration with <a href="http://www.stanforddaily.com">The Stanford Daily</a>, Stanford's premier publication. Student journalists are constantly trying to write impactful stories about the university, but they often struggle to find relevant data that would strengthen their narratives. Even if this data can be located, often it is unprocessed and difficult to use. Additionally, there are many stories that wouldn't be discovered without seeing the data first. As a result, SODP's convenient access to Stanford data is immensely valuable for The Stanford Daily. </p>
 
     <p>SODP is also the recipient of <a href="https://www.codingitforward.com/build">Coding It Forward's Build Program Fellowship</a>, a semester-long civic tech incubator.</p>
+
+    <img src={photo} alt="photo" />
   </div>
 );
 
