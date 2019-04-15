@@ -5,7 +5,7 @@ class TopBar extends React.Component {
     render() {
 	return(
 	  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a className="navbar-brand" href="#">Navbar</a>
+  <a className="navbar-brand" href="#">Logo </a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -16,17 +16,26 @@ class TopBar extends React.Component {
         <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Link</a>
+        <a className="nav-link" href="/data-list">Data Catalog</a>
+      </li>
+      <li className="nav-item active">
+        <a className="nav-link" href="#">Blog <span className="sr-only">(current)</span></a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="/submit">Submit</a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="/about">About</a>
       </li>
       <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Affiliated Sites
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a className="dropdown-item" href="#">Action</a>
-          <a className="dropdown-item" href="#">Another action</a>
+          <a className="dropdown-item" href="#">The Stanford Daily</a>
           <div className="dropdown-divider"></div>
-          <a className="dropdown-item" href="#">Something else here</a>
+          <a className="dropdown-item" href="#">Dataviz</a>
+          <a className="dropdown-item" href="#">Jobs Board</a>
         </div>
       </li>
       <li className="nav-item">
