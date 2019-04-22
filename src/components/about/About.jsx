@@ -10,7 +10,7 @@ const About = () => (
 
     <p>SODP is also the recipient of <a href="https://www.codingitforward.com/build">Coding It Forward's Build Program Fellowship</a>, a semester-long civic tech incubator.</p>
 
-    <img src={photo} alt="photo" />
+    <img src={photo} alt="photo" style={{height: '15.1rem'}} />
   </div>
 );
 
