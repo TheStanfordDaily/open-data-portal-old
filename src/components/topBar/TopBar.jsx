@@ -33,9 +33,9 @@ class TopBar extends React.Component {
           Affiliated Sites
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a className="dropdown-item" href="https://stanforddaily.com/">The Stanford Daily</a>
+          <a className="dropdown-item" href="https://stanforddaily.com/" target="_blank">The Stanford Daily</a>
           <div className="dropdown-divider"></div>
-          <a className="dropdown-item" href="https://thestanforddaily.github.io/94305/">Data Visualizations Site</a>
+          <a className="dropdown-item" href="https://thestanforddaily.github.io/94305/" target="_blank">Data Visualizations Site</a>
           <a className="dropdown-item" href="#">Jobs Board</a>
         </div>
       </li>
