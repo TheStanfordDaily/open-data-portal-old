@@ -16,10 +16,18 @@ class DataList extends React.Component {
 
   render() {
     return (
-        <div>
-          <ul>
+        <div className = "container">
+          {this.state.data_list && this.state.data_list.map((post) =>
+          <div className = "card card-body"> 
+                <h4 className = "card-title"> {post.name} </h4>
+                <p className = "card-text"> {post.description} </p>
+                <small><i><a href = {post.source_url}> Source </a> </i></small>
+                <small> Posted on {post.create_date}  </small> 
+            </div>
+          )}
+          {/*<ul>
             {this.state.data_list && this.state.data_list.map((i) => <li key={i.name}><DataItem obj={i} /></li>)}
-          </ul>
+          </ul>*/}
         </div>
     );
   }
