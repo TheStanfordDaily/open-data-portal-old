@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.css';
 
 import About from './components/about/About.jsx';
 import Home from './components/homePage/HomePage.jsx';
