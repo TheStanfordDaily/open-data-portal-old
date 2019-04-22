@@ -2,7 +2,7 @@ import React from 'react';
 import photo from './photo.jpg';
 
 const About = () => (
-  <div>
+  <div className="container">
     <h2>About Us</h2>
     <p>The Stanford Open Data Project (SODP) is making data about Stanford University more accessible  and transparent. Our Open Data Portal allows anyone to find and analyze Stanford-related data, such as university finances, student life, and academics.</p>
 
