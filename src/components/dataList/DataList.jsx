@@ -17,7 +17,7 @@ class DataList extends React.Component {
   render() {
     return (
         <div className = "container">
-          <h1> Data Catalog</h1>
+          <h2> Data Catalog</h2>
           <div className = "row">
           <div className = "col-3"> < SideBar /> </div>
           

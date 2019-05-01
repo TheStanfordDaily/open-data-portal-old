@@ -8,7 +8,7 @@ class DataDetail extends React.Component {
 		<div className="left">
 	    	 <h1 id = "name"> {this.props.match.params.dataName} </h1>
 			 Upload Date: {this.props.match.params.create_date} <br></br>
-		     Source: {this.props.match.params.url}
+		     <Link to = "/"> Source </Link>  {this.props.match.params.url}
 		     <div> Description: {this.props.match.params.description}  </div>
 	        </div>
 
