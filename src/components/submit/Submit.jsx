@@ -20,7 +20,7 @@ const Submit = () => (
 		    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 		  </div>
 		  <div>
-		  	<button type="submit" className="btn btn-primary">Submit!</button>
+		  	<button type="submit" className="btn btn-primary" onClick={() => alert("Thank you for contacting us. Your message has been sent!")}>Submit!</button>
 		  </div>
 		</form>
     </div>
