@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 class DataDetail extends React.Component {
     render() {
 	return(
-	    <div>
+	    <div className = "container">
 		<div className="left">
-	    	     <div id = "name"> {this.props.match.params.dataName} </div>
-		     <p> Source: add source </p>
-		     <p> Last Updated: add date </p>
-		     <div> add description </div>
+	    	 <h1 id = "name"> {this.props.match.params.dataName} </h1>
+			 Upload Date: {this.props.match.params.create_date} <br></br>
+		     Source: {this.props.match.params.url}
+		     <div> Description: {this.props.match.params.description}  </div>
 	        </div>
 
 	    	<div className="top-right">

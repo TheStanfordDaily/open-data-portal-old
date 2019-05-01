@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import DataItem from '../dataItem/DataItem.jsx';
+// import DataItem from '../dataItem/DataItem.jsx';
 import { Link, Route } from 'react-router-dom';
 //import DataDetail from '../dataDetail/DataDetail.jsx';
-//import SideBar from '../sideBar/SideBar.jsx';
+import SideBar from '../sideBar/SideBar.jsx';
 
 class DataList extends React.Component {
   constructor(props) {
@@ -17,7 +17,14 @@ class DataList extends React.Component {
   render() {
     return (
         <div className = "container">
+          <h1> Data Catalog</h1>
+          <div className = "row">
+          <div className = "col-3"> < SideBar /> </div>
+          
+          <div className = "col-9">
+          
           {this.state.data_list && this.state.data_list.map((post) =>
+          <div>
           <div className = "card card-body">
                 <h4 className = "card-title">
                   <Link to={'/datasets/' + post.name}>{post.name}</Link>
@@ -25,11 +32,16 @@ class DataList extends React.Component {
                 <p className = "card-text"> {post.description} </p>
                 <small><i><a href = {post.source_url}> Source </a> </i></small>
                 <small> Posted on {post.create_date}  </small>
-            </div>
+                
+          </div>
+          <br></br>
+          </div>
           )}
           {/*<ul>
             {this.state.data_list && this.state.data_list.map((i) => <li key={i.name}><DataItem obj={i} /></li>)}
           </ul>*/}
+          </div>
+          </div>
         </div>
     );
   }
