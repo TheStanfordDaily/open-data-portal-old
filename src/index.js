@@ -29,7 +29,7 @@ const BasicExample = () => (
       <Route path="/about" component={About} />
       <Route path="/data-list" component={DataList} />
       <Route path="/submit" component={Submit} />
-      <Route path="/datasets/:dataName" component={DataDetail} />
+      <Route path="/datasets/:name" component={DataDetail} />
     </div>
     </div>
   </Router>

@@ -20,9 +20,9 @@ class DataList extends React.Component {
           <h1> Data Catalog</h1>
           <div className = "row">
           <div className = "col-3"> < SideBar /> </div>
-          
+
           <div className = "col-9">
-          
+
           {this.state.data_list && this.state.data_list.map((post) =>
           <div>
           <div className = "card card-body">
@@ -32,7 +32,7 @@ class DataList extends React.Component {
                 <p className = "card-text"> {post.description} </p>
                 <small><i><a href = {post.source_url}> Source </a> </i></small>
                 <small> Posted on {post.create_date}  </small>
-                
+
           </div>
           <br></br>
           </div>
