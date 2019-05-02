@@ -15,7 +15,7 @@ class DataDetail extends React.Component {
 	    	<div className="top-right">
 	    	     <Link to="/"> View Data </Link>
 		     <Link to="/"> Visualize </Link>
-             <a href={"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.dataName+".csv"} target="_blank" rel="noopener noreferrer">Export</a>
+             <a href={"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name+".csv"} target="_blank" rel="noopener noreferrer">Export</a>
 
 		     <Link to="/"> API Call  </Link>
 	    	</div>
