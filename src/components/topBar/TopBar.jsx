@@ -39,9 +39,6 @@ class TopBar extends React.Component {
           <a className="dropdown-item" href="#">Jobs Board</a>
         </div>
       </li>
-      <li className="nav-item">
-        <a className="nav-link disabled" href="#">Disabled</a>
-      </li>
     </ul>
   </div>
   <form className="form-inline my-2 my-lg-0">
