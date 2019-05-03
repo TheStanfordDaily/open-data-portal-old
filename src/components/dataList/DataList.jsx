@@ -27,7 +27,12 @@ class DataList extends React.Component {
           <div>
           <div className = "card card-body">
                 <h4 className = "card-title">
-                  <Link to={'/datasets/' + post.name}>{post.name}</Link>
+                  <Link to={{
+                    pathname: '/datasets/' + post.name,
+                    state: {
+                      data: post,
+                    }
+                  }}>{post.display_name}</Link>
                 </h4>
                 <p className = "card-text"> {post.description} </p>
                 <small><i><a href = {post.source_url}> Source </a> </i></small>

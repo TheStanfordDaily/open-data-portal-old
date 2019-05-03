@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DataList from '../dataList/DataList.jsx'
 
-class DataDetail extends React.Component {
+class DataDetail extends DataList {
     render() {
 	return(
 	    <div className = "container">
 		<div className="left">
-	    	 <h1 id = "name"> {this.props.match.params.name} </h1>
-			 Upload Date: {this.props.match.params.create_date} <br></br>
-		     Source: {this.props.match.params.url}
-		     <div> Description: {this.props.match.params.description}  </div>
+	    	 <h1 id = "name"> {this.props.location.state.data.display_name} </h1>
+			 Upload Date: {this.props.location.state.data.create_date} <br></br>
+		     <a href = {this.props.location.state.data.source_url}> Source </a>
+		     <div> Description: {this.props.location.state.data.description}  </div>
 	        </div>
 
 	    	<div className="top-right">
@@ -20,7 +21,7 @@ class DataDetail extends React.Component {
 		     <Link to="/"> API Call  </Link>
 	    	</div>
 
-		<div className = "data"> add table of data here </div>
+		<div className = "data"> Table </div>
 	    </div>
 	)
     }
