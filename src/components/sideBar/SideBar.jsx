@@ -2,10 +2,25 @@ import React from 'react';
 //import { Link } from 'react-router-dom';
 
 class SideBar extends React.Component {
+	constructor(props) {
+    super(props);
+
+    this.state = {
+      categories: [],
+    };
+
+	this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+	  
+  }
+
+
 
 	render() {
 		return(
-			<div>
+			<div className = "container">
 			<form>
 				<h5>Filter By</h5>
 				<div id="filter" className="all">
@@ -18,16 +33,12 @@ class SideBar extends React.Component {
 						<label for="academics">Academics</label>
 					</div>
 					<div>
+						<input type="checkbox" name="studentdorms" value="studentdorms" />
+						<label for="studentdorms">Student Life</label>
+					</div>
+					<div>
 						<input type="checkbox" name="r&de" value="r&de" />
 						<label for="r&de">R&DE</label>
-					</div>
-					<div>
-						<input type="checkbox" name="mealplans" value="mealplans" />
-						<label for="mealplans">Meal Plans</label>
-					</div>
-					<div>
-						<input type="checkbox" name="studentdorms" value="studentdorms" />
-						<label for="studentdorms">Student Dorms</label>
 					</div>
 				</div>
 
@@ -68,6 +79,11 @@ class SideBar extends React.Component {
 						</select>
 					</div>
 				</div>
+
+				<div>
+			  		<button type="submit" className="btn btn-primary" onClick={() =>
+						this.handleSubmit()}>Submit!</button>
+			  	</div>
 			</form>
 			</div>
 		)
