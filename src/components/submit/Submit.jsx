@@ -5,6 +5,12 @@ class Submit extends React.Component{
 	render(){
 		let schema ={
 			"type": "object",
+			"required": [
+				"name",
+				"reason",
+				"message"
+			],
+	
 			"properties": {
 				"name": {
 					"title": "Name",
@@ -18,8 +24,7 @@ class Submit extends React.Component{
 				"reason": {
 					"title": "Reason for contacting",
 					"type": "string", 
-					"enum": ["New dataset", "Dataset request", "Comment"],
-					"default": "Brief description."
+					"enum": ["New Dataset", "Dataset Request", "Comment"]
 				},
 				"message": {
 					"title": "Message",
