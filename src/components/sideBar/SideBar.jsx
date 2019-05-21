@@ -10,10 +10,29 @@ class SideBar extends React.Component {
     };
 
 	this.handleSubmit = this.handleSubmit.bind(this);
+	this.handleClick = this.handleClick.bind(this);
   }
 
   handleSubmit(event) {
-	  
+
+  }
+
+  handleClick(event) {
+	  var tag = event.target.value;
+	  if (this.state.categories.includes(tag)) {
+		  var filtered = this.state.categories.filter(cat => {
+			  return cat !== tag;
+		  });
+		  this.setState({
+			  categories: filtered,
+		  });
+		  this.props.updateFilters(filtered);
+	  } else {
+		  this.setState({
+			  categories: [...this.state.categories, tag],
+		  });
+		  this.props.updateFilters(this.state.categories.concat(tag));
+	  }
   }
 
 
@@ -25,16 +44,16 @@ class SideBar extends React.Component {
 				<h5>Filter By</h5>
 				<div id="filter" className="all">
 					<div>
-						<input type="checkbox" name="finances" value="finances" />
-						<label for="finances">Finances</label>
+						<input type="checkbox" name="Finances" value="Finances" onClick = {this.handleClick}/>
+						<label for="Finances">Finances</label>
 					</div>
 					<div>
-						<input type="checkbox" name="academics" value="academics" />
-						<label for="academics">Academics</label>
+						<input type="checkbox" name="Academics" value="Academics" onClick = {this.handleClick}/>
+						<label for="Academics">Academics</label>
 					</div>
 					<div>
-						<input type="checkbox" name="studentdorms" value="studentdorms" />
-						<label for="studentdorms">Student Life</label>
+						<input type="checkbox" name="Students" value="Students" onClick = {this.handleClick}/>
+						<label for="Students">Student Life</label>
 					</div>
 					<div>
 						<input type="checkbox" name="r&de" value="r&de" />
