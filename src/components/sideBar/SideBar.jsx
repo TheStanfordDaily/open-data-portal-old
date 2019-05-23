@@ -3,12 +3,26 @@ import Form from 'react-jsonschema-form'
 //import { Link } from 'react-router-dom';
 
 class SideBar extends React.Component {
-	render(){
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			data: '',
+		};
+		this.handleSubmit = this.handleSubmit.bind(this);
+
+	}
+
+	handleSubmit(data) {
+	  this.props.updateFilters(data);
+  	}
+
+	render() {
 		let schema ={
 			"title": "Filter By:",
 			"type": "object",
 			"required": [
-				
+
 			],
 			"properties": {
 				"category": {
@@ -17,10 +31,10 @@ class SideBar extends React.Component {
 					"items": {
 						"type": "string",
 						"enum": [
-							" Finance",
-							" Academics",
-							" Student Life",
-							" R&DE"
+							"Finances",
+							"Academics",
+							"Students",
+							"R&DE"
 						]
 					},
 					"uniqueItems": true
@@ -31,10 +45,10 @@ class SideBar extends React.Component {
 					"items": {
 						"type": "string",
 						"enum": [
-							" Numerical",
-							" Geospatial",
-							" Categorical",
-							" Temporal"
+							"Numerical",
+							"Geospatial",
+							"Categorical",
+							"Temporal"
 						]
 					},
 					"uniqueItems": true
@@ -52,7 +66,7 @@ class SideBar extends React.Component {
 		return(
 			<div className = "container">
 			 <p>Search for the dataset you want! </p>
-				<Form schema={schema} uiSchema={uiSchema} onSubmit={e => console.log(e.formData)} >
+				<Form schema={schema} uiSchema={uiSchema} onSubmit={e => this.handleSubmit(e.formData)} >
 					<button>Search</button>
 				</Form>
 			</div>
