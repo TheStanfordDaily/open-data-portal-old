@@ -19,8 +19,8 @@ class DataList extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:9000/datasets/list').then(
-        (success) => {
+    var url = 'https://open-data-portal.s3.us-east-2.amazonaws.com/metadata.json';
+    axios.get(url).then(success => {
           var data_list = success.data;
           this.setState({
             data_list: success.data,

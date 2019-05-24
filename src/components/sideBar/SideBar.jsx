@@ -46,7 +46,6 @@ class SideBar extends React.Component {
 						"type": "string",
 						"enum": [
 							"Numerical",
-							"Geospatial",
 							"Categorical",
 							"Temporal"
 						]
