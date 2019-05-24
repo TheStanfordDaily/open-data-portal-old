@@ -43,15 +43,17 @@ class DataDetail extends React.Component {
 
 	componentDidMount() {
 		//const { handle } = this.props.match.params
-		axios.get('http://localhost:9000/datasets/list/').then(
-			(success) => {
-				this.setState({
-					data_list: success.data,
-				});
-			}, (failure) => {
-				console.log(failure);
-			}
-		);
+		var url = 'https://open-data-portal.s3.us-east-2.amazonaws.com/metadata.json';
+    	axios.get(url).then(success => {
+          var data_list = success.data;
+          this.setState({
+            data_list: success.data,
+            final_list: data_list,
+          });
+        }, (failure) => {
+          console.log(failure);
+        }
+    	);
 	}
 }
 

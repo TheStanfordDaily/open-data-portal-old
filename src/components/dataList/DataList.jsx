@@ -4,7 +4,6 @@ import axios from 'axios';
 import { Link, Route } from 'react-router-dom';
 //import DataDetail from '../dataDetail/DataDetail.jsx';
 import SideBar from '../sideBar/SideBar.jsx';
-var cors = require('cors');
 
 class DataList extends React.Component {
   constructor(props) {
@@ -20,7 +19,7 @@ class DataList extends React.Component {
   }
 
   componentDidMount() {
-    var url = 'https://s3.us-east-2.amazonaws.com/open-data-portal/metadata.json';
+    var url = 'https://open-data-portal.s3.us-east-2.amazonaws.com/metadata.json';
     axios.get(url).then(success => {
           var data_list = success.data;
           this.setState({
