@@ -7,9 +7,9 @@ class Home extends React.Component {
       <div className="container">
         <h2 id = "title">Stanford Open Data Portal</h2>
         <div id="intro">
-          <p> The Stanford Open Data Project (SODP) is making data about Stanford University more accessible and transparent. Our site makes it easy to find and analyze Stanford-related data, such as university finances, student life, and academics. </p>
+          <p> The Stanford Open Data Project (SODP) is making data about Stanford University more accessible and transparent. The final version of this site will aggregate data about Stanford University &mdash; such as university finances, student life, and academics &mdash; as well as tools to analyze the data. </p>
         </div>
-	<p> This site is still under construction. However, in the meantime, you can:</p>
+	<p> This site is under construction and datasets are still being uploaded. However, in the meantime, you can:</p>
 	<p>
 	<ul>
 	<li><a href="/data-list">Browse the Data Catalog</a></li>
