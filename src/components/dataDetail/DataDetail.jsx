@@ -21,9 +21,9 @@ class DataDetail extends React.Component {
 						<div>
 							<div>
 								<h1 id="name"> {post.display_name} </h1>
-								Upload Date: {post.create_date}  <br></br>
-								<div> Description: {post.description} </div>
-								<a href = {post.source_url}> Download Source </a>
+								<b>Upload Date:</b> {post.create_date}  <br></br>
+								<div> <b>Description:</b> {post.description} </div>
+								<b>Actions:</b> <a href = {post.source_url}> Download</a>
 							</div>
 						</div>
 					)}
