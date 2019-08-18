@@ -1,76 +1,57 @@
 import React from 'react';
-import Form from 'react-jsonschema-form'
+// import Form from 'react-bootstrap/Form';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-jsonschema-form'
 //import { Link } from 'react-router-dom';
 
 class SideBar extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
-			data: '',
+      filters: ""
 		};
-		this.handleSubmit = this.handleSubmit.bind(this);
-
+		console.log("this.state", this.state)
 	}
 
-	handleSubmit(data) {
-	  this.props.updateFilters(data);
-  	}
-
+	updatecheckboxes(name) {
+		console.log(name);
+	}
 	render() {
-		let schema ={
-			"title": "Filter By:",
-			"type": "object",
-			"required": [
-
-			],
-			"properties": {
-				"category": {
-					"type": "array",
-					"title": "Category:",
-					"items": {
-						"type": "string",
-						"enum": [
-							"Finances",
-							"Academics",
-							"Students",
-							"R&DE"
-						]
-					},
-					"uniqueItems": true
-				},
-				"data_type": {
-					"type": "array",
-					"title": "Data Type:",
-					"items": {
-						"type": "string",
-						"enum": [
-							"Numerical",
-							"Geospatial",
-							"Categorical",
-							"Temporal"
-						]
-					},
-					"uniqueItems": true
-				}
-			}
-		}
-		let uiSchema = {
-			"category": {
-				"ui:widget": "checkboxes"
-			},
-			"data_type": {
-				"ui:widget": "checkboxes"
-			}
-		}
-		return(
+		console.log("props", this.props);
+		return (
 			<div className = "container">
-			 <p>Search for the dataset you want! </p>
-				<Form schema={schema} uiSchema={uiSchema} onSubmit={e => this.handleSubmit(e.formData)} >
-					<button>Search</button>
-				</Form>
+				<p>Search for the dataset you want! </p>
+				<form className="form-inline">
+				<div className="form-check">
+					<input className="form-check-input" type="checkbox" value={this.state.filters.includes("Finances")} id="Finances"/>
+					<label className="form-check-label" for="Finances">
+						Finances
+					</label>
+				</div>
+				<div className="form-check">
+					<input className="form-check-input" type="checkbox" value={this.state.filters.includes("Academics")} id="Academics"/>
+					<label className="form-check-label" for="Academics">
+						Academics
+					</label>
+				</div>
+				<div className="form-check">	
+					<input className="form-check-input" type="checkbox" value={this.state.filters.includes("Students")} id="Students"/>
+					<label className="form-check-label" for="Students">
+						Students
+					</label>
+				</div>
+				<div className="form-check">	
+				<input className="form-check-input" type="checkbox" value={this.state.filters.includes("R&DE")} id="R&DE"/>
+					<label className="form-check-label" for="R&DE">
+						R&DE
+					</label>
+				</div>
+				<button type="submit" className="btn btn-primary mb-2" onSubmit={this.props.updateFilters(this.state.filters)}>
+					Search
+				</button>
+				</form>
 			</div>
-		);
+		)
 	}
 }
 
