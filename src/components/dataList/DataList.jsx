@@ -19,7 +19,7 @@ class DataList extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:9000/datasets/list').then(
+    axios.get('https://open-data-portal.s3.us-east-2.amazonaws.com/metadata.json').then(
         (success) => {
           var all_datasets = success.data;
           this.setState({
@@ -35,7 +35,7 @@ class DataList extends React.Component {
   updateFilters(newData) {
     console.log("newdata", newData);
     let all_datasets = this.state.all_datasets;
-    let final = newData === undefined ? all_datasets :
+    let final = (newData === undefined | newData.length === 0) ? all_datasets :
     all_datasets.filter((post) => {
       return newData.includes(post.tags);
     });
@@ -44,16 +44,13 @@ class DataList extends React.Component {
       filters: newData,
       datasets_to_display: final,
     }, () => {
-      console.log("update", newData, final, this.state);
-      debugger;
+      console.log("updatefilters", newData, final, this.state);
     })
-    
-    debugger;
   }
 
   render() {
     console.log("props", this.state.filters);
-    debugger;
+
     return (
         <div className = "container">
           <h2> Data Catalog</h2>
@@ -62,23 +59,23 @@ class DataList extends React.Component {
 
           <div className = "col-9">
 
-          {this.state.all_datasets && this.state.datasets_to_display.map((post) =>
-          <div>
-          <div className = "card card-body">
-                <h4 className = "card-title">
-                  <Link to={{
-                    pathname: '/datasets/' + post.name,
-                    state: {
-                      data: post,
-                    }
-                  }}>{post.display_name}</Link>
-                </h4>
-                <p className = "card-text"> {post.description} </p>
-                <small><i><a href = {post.source_url}> Source </a> </i></small>
-                <small> Posted on {post.create_date}  </small>
+          {this.state.datasets_to_display && this.state.datasets_to_display.map((post) =>
+            <div>
+            <div className = "card card-body">
+                  <h4 className = "card-title">
+                    <Link to={{
+                      pathname: '/datasets/' + post.name,
+                      state: {
+                        data: post,
+                      }
+                    }}>{post.display_name}</Link>
+                  </h4>
+                  <p className = "card-text"> {post.description} </p>
+                  <small><i><a href = {post.source_url}> Source </a> </i></small>
+                  <small> Posted on {post.create_date}  </small>
 
-          </div>
-          <br></br>
+            </div>
+            <br></br>
           </div>
           )}
           </div>
