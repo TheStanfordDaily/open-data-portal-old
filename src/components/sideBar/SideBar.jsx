@@ -5,72 +5,76 @@ import Form from 'react-jsonschema-form'
 class SideBar extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
-			data: '',
+			filters: '',
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
-
+		console.log("this.state", this.state)
 	}
 
 	handleSubmit(data) {
+		console.log("submitted")
+
 	  this.props.updateFilters(data);
-  	}
+	}
+	handleCheckboxChange(data) {
+		if (this.state.filters.includes(data)) {
+			this.setState({
+				filters: this.state.filters.replace(data+',','')
+			}, () => {
+				console.log("removed", this.state.filters);
+			})
+		} else {
+			this.setState({
+				filters: this.state.filters + data + ","
+			}, () => {
+				console.log("added", this.state.filters);
+			})
+		}
+
+	}
 
 	render() {
-		let schema ={
-			"title": "Filter By:",
-			"type": "object",
-			"required": [
-
-			],
-			"properties": {
-				"category": {
-					"type": "array",
-					"title": "Category:",
-					"items": {
-						"type": "string",
-						"enum": [
-							"Finances",
-							"Academics",
-							"Students",
-							"R&DE"
-						]
-					},
-					"uniqueItems": true
-				},
-				"data_type": {
-					"type": "array",
-					"title": "Data Type:",
-					"items": {
-						"type": "string",
-						"enum": [
-							"Numerical",
-							"Geospatial",
-							"Categorical",
-							"Temporal"
-						]
-					},
-					"uniqueItems": true
-				}
-			}
-		}
-		let uiSchema = {
-			"category": {
-				"ui:widget": "checkboxes"
-			},
-			"data_type": {
-				"ui:widget": "checkboxes"
-			}
-		}
-		return(
+		return (
 			<div className = "container">
-			 <p>Search for the dataset you want! </p>
-				<Form schema={schema} uiSchema={uiSchema} onSubmit={e => this.handleSubmit(e.formData)} >
-					<button>Search</button>
-				</Form>
+				<p>Search for the dataset you want! </p>
+				<form className="form-inline" onSubmit={e => {
+					e.preventDefault();
+					this.handleSubmit(this.state.filters)}}>
+					<div className="form-check">
+						<input className="form-check-input" type="checkbox" id="Finances"
+							checked={this.state.filters.includes("Finances")} onChange={e => this.handleCheckboxChange("Finances")}/>
+							<label className="form-check-label" for="Finances">
+								Finances
+							</label>
+					</div>
+					<div className="form-check">
+						<input className="form-check-input" type="checkbox" id="Academics"
+							checked={this.state.filters.includes("Academics")} onChange={e => this.handleCheckboxChange("Academics")}/>
+							<label className="form-check-label" for="Academics">
+								Academics
+							</label>
+					</div>
+					<div className="form-check">
+						<input className="form-check-input" type="checkbox" id="Students"
+							checked={this.state.filters.includes("Students")} onChange={e => this.handleCheckboxChange("Students")}/>
+							<label className="form-check-label" for="Students">
+								Students
+							</label>
+					</div>
+					<div className="form-check">
+					<input className="form-check-input" type="checkbox" id="R&DE"
+						checked={this.state.filters.includes("R&DE")} onChange={e => this.handleCheckboxChange("R&DE")}/>
+						<label className="form-check-label" for="R&DE">
+							R&DE
+						</label>
+					</div>
+					<button type="submit" className="btn btn-primary mb-2">
+						Search
+					</button>
+				</form>
 			</div>
-		);
+		)
 	}
 }
 
