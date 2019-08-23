@@ -21,19 +21,10 @@ class DataDetail extends React.Component {
 						<div>
 							<div>
 								<h1 id="name"> {post.display_name} </h1>
-								Upload Date: {post.create_date}  <br></br>
-								<a href = {post.source_url}> Source </a>
-								<div> Description: {post.description} </div>
+								<b>Upload Date:</b> {post.create_date}  <br></br>
+								<div> <b>Description:</b> {post.description} </div>
+								<b>Actions:</b> <a href = {post.source_url}> Download</a>
 							</div>
-
-							<div className="top-right">
-								<Link to="/"> Visualize </Link>
-								<a href={"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv"} target="_blank" rel="noopener noreferrer">Export</a>
-
-								<Link to="/"> API Call  </Link>
-							</div>
-
-							<div className="data"> Table </div>
 						</div>
 					)}
 				</div>
