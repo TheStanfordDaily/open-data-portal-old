@@ -1,13 +1,27 @@
 import React from 'react';
 import Form from 'react-jsonschema-form'
-
+import * as emailjs from 'emailjs-com'
 class Submit extends React.Component{
+	onSubmitForm(formData) {
+		console.log("formData", formData);
+		const templateParams = {
+			name: formData.name,
+			email: formData.email,
+			message: formData.message
+		}
+		emailjs.send('gmail', 'template_7oDz4B6T', templateParams, 'user_QAUruhPQ0MpGqcIy5zffv').then(function(response) {
+			console.log('SUCCESS!', response.status, response.text);
+		}, function(error) {
+			console.log('FAILED...', error);
+		});
+	}
 	render(){
+		// Create form schemas
 		let schema ={
 			"type": "object",
 			"required": [
 				"name",
-				"reason",
+				"email",
 				"message"
 			],
 	
@@ -21,22 +35,9 @@ class Submit extends React.Component{
 					"type": "string",
 					"format": "email"
 				},
-				"reason": {
-					"title": "Reason for contacting",
-					"type": "string", 
-					"enum": ["New Dataset", "Dataset Request", "Comment"]
-				},
 				"message": {
 					"title": "Message",
 					"type": "string"
-				},
-				"files": {
-					"type": "array",
-					"title": "If relevant, add files containing datasets.",
-					"items": {
-						"type": "string",
-						"format": "data-url"
-					}
 				},
 				"subscribe":{
 					"title": " I want to be notified when new datasets are added!",
@@ -58,12 +59,13 @@ class Submit extends React.Component{
 				"ui:placeholder": "Type your message!"
 			}
 		}
+
 		return(
 			<div className = "container">
 				<h2> Contact Us! </h2>
 				<p>In the form below, you can leave us a message or drop 
 					us a link to an interesting Stanford dataset you found (or would like to see)! </p>
-				<Form schema={schema} uiSchema={uiSchema} onSubmit={e => console.log(e.formData)} />
+				<Form schema={schema} uiSchema={uiSchema} onSubmit={e => this.onSubmitForm(e.formData)} />
 			</div>
 		);
 	}
