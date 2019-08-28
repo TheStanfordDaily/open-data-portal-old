@@ -1,15 +1,17 @@
 import React from 'react';
-import Form from 'react-jsonschema-form'
-import * as emailjs from 'emailjs-com'
+import Form from 'react-jsonschema-form';
+import * as emailjs from 'emailjs-com';
+
 class Submit extends React.Component{
 	onSubmitForm(formData) {
-		console.log("formData", formData);
 		const templateParams = {
 			name: formData.name,
 			email: formData.email,
 			message: formData.message
 		}
 		emailjs.send('gmail', 'template_7oDz4B6T', templateParams, 'user_QAUruhPQ0MpGqcIy5zffv').then(function(response) {
+			//Send notification to user of form submit
+			alert('Email sent!');
 			console.log('SUCCESS!', response.status, response.text);
 		}, function(error) {
 			console.log('FAILED...', error);
