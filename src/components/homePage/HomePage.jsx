@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
 class Home extends React.Component {
   //constructor if necessary here
   render() {
@@ -12,9 +12,9 @@ class Home extends React.Component {
 	<p> This site is under construction and datasets are still being uploaded. However, in the meantime, you can:</p>
 	<p>
 	<ul>
-	<li><a href="/data-list">Browse the Data Catalog</a></li>
-	<li><a href="/about">Learn more about us</a></li>
-	<li><a href="/submit">Contact us</a></li>
+	<li><Link to="/data-list">Browse the Data Catalog</Link></li>
+	<li><Link to="/about">Learn more about us</Link></li>
+	<li><Link to="/submit">Contact us </Link></li>
 	</ul>
 	</p>
       </div>

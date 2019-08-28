@@ -12,6 +12,7 @@ class Submit extends React.Component{
 		emailjs.send('gmail', 'template_7oDz4B6T', templateParams, 'user_QAUruhPQ0MpGqcIy5zffv').then(function(response) {
 			//Send notification to user of form submit
 			alert('Email sent!');
+			console.log(templateParams);
 			console.log('SUCCESS!', response.status, response.text);
 		}, function(error) {
 			console.log('FAILED...', error);
@@ -54,6 +55,7 @@ class Submit extends React.Component{
 				"ui:placeholder": "Enter your name here."
 			},
 			"email":{
+				"ui:widget": "text",
 				"ui:placeholder": "What is your email?"
 			},
 			"message": {
