@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import DataList from '../dataList/DataList.jsx'
+import DataList from '../dataList/DataList.jsx';
 import axios from 'axios';
 
 class DataDetail extends React.Component {
