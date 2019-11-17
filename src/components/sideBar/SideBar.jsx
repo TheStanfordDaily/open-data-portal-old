@@ -69,6 +69,13 @@ class SideBar extends React.Component {
 							R&DE
 						</label>
 					</div>
+					<div className="form-check">
+					<input className="form-check-input" type="checkbox" id="Sports"
+						checked={this.state.filters.includes("Sports")} onChange={e => this.handleCheckboxChange("Sports")}/>
+						<label className="form-check-label" for="Sports">
+							Sports
+						</label>
+					</div>
 					<button type="submit" className="btn btn-primary mb-2">
 						Search
 					</button>
