@@ -25,18 +25,18 @@ const BasicExample = () => (
             crossorigin="anonymous"
       />
 
-    <div>
-      <TopBar />
+      <div>
+        <TopBar />
 
-      <hr />
-      <switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/data-list" component={DataList} />
-      <Route path="/submit" component={Submit} />
-      <Route path="/datasets/:name" component={DataDetail} />
-      </switch>
-    </div>
+        <hr />
+        <switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/data-list" component={DataList} />
+        <Route path="/submit" component={Submit} />
+        <Route path="/datasets/:name" component={DataDetail} />
+        </switch>
+      </div>
     </div>
   </Router>
 );

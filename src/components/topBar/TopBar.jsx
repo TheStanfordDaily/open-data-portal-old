@@ -19,7 +19,7 @@ class TopBar extends React.Component {
         <Link className="nav-link" to="/data-list">Data Catalog</Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/submit">Submit</Link>
+        <Link className="nav-link" to="/submit">Contact Us</Link>
       </li>
       <li className="nav-item">
         <Link className="nav-link" to="/about">About</Link>
